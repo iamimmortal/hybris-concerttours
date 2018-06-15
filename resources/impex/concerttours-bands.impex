@@ -1,0 +1,10 @@
+# ImpEx for Importing Bands into Little Concert Tours Store
+ 
+INSERT_UPDATE Band;code[unique=true];name;albumSales;history
+;A008;The Quieter;12000;Test of times
+;A001;yRock;1000000;Occasional tribute rock band comprising senior managers from a leading commerce software vendor
+
+
+
+INSERT_UPDATE BandComment;code[unique=true];date;name;comment
+;A008;;Dharmendra;wow great
