@@ -11,16 +11,20 @@
  */
 package concerttours.daos.impl;
 
+import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import concerttours.daos.BandDAO;
+import concerttours.events.CommentEvent;
 import concerttours.model.BandCommentModel;
 import concerttours.model.BandModel;
 
@@ -31,6 +35,8 @@ public class DefaultBandDAO implements BandDAO
 	@Autowired
 	private ModelService modelService;
 
+	@Resource
+	private EventService eventService;
 	/**
 	 * Use Hybris FlexibleSearchService for running queries against the database
 	 */
@@ -113,6 +119,10 @@ public class DefaultBandDAO implements BandDAO
 			obj.setBands(bandCommentModel.getBands());
 
 			modelService.save(obj);
+			//calling event when comment is saved by creating instance of CommentEvent class
+			final CommentEvent commentEvent = new CommentEvent("Comment added successfully");
+			//publish the event
+			eventService.publishEvent(commentEvent);
 			return 1;
 		}
 

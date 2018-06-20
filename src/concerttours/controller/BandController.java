@@ -72,8 +72,8 @@ public class BandController
 		bandCommentModel.setComment(comment);
 		try
 		{
-			final int i = bandFacade.saveComment(bandCommentModel);
-			model.addAttribute("result", Integer.valueOf(i));
+			bandFacade.saveComment(bandCommentModel);
+
 		}
 		catch (final NullPointerException n)
 		{
@@ -104,9 +104,15 @@ public class BandController
 		 */
 
 		//to fetch comment
+		try
+		{
 		final List<CommentData> comment = bandFacade.getCommentForCode(bandId);
 		model.addAttribute("comments", comment);
-
+		}
+		catch (final Exception e)
+		{
+			e.printStackTrace();
+		}
 		return "BandDetails";
 	}
 

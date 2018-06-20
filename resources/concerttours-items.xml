@@ -150,6 +150,23 @@
             </attribute>
         </attributes>
     </itemtype>
+    
+    
+    <!-- attribute to store deleted user in database by using interceptor concept -->
+     <itemtype code="CommentAuditEntry" generate="true" autocreate="true">
+                <deployment table="CommentAuditEntries" typecode="8998"/>
+                <attributes>
+                    <attribute qualifier="commentbandcode" type="java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="changeTimestamp" type="java.util.Date">
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
     <!-- Hybris123SnippetEnd -->
    
   </itemtypes>

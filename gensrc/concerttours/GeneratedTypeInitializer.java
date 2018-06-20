@@ -76,6 +76,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"CommentAuditEntry",
+			"GenericItem",
+			concerttours.jalo.CommentAuditEntry.class,
+			"de.hybris.platform.persistence.concerttours_CommentAuditEntry",
+			false,
+			null,
+			false
+		);
+	
 		createRelationType(
 			"Product2RockBand",
 			null,
@@ -142,6 +152,12 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_BandComment_name();
 			
 				single_createattr_BandComment_comment();
+			
+				single_createattr_CommentAuditEntry_commentbandcode();
+			
+				single_createattr_CommentAuditEntry_name();
+			
+				single_createattr_CommentAuditEntry_changeTimestamp();
 			
 		createRelationAttributes(
 			"Product2RockBand", 
@@ -428,6 +444,57 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_CommentAuditEntry_commentbandcode() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CommentAuditEntry", 
+					"commentbandcode",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_CommentAuditEntry_name() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CommentAuditEntry", 
+					"name",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_CommentAuditEntry_changeTimestamp() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CommentAuditEntry", 
+					"changeTimestamp",  
+					null,
+					"java.util.Date",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -588,6 +655,25 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_BandComment_name();
 		
 			single_setAttributeProperties_BandComment_comment();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"CommentAuditEntry",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_CommentAuditEntry_commentbandcode();
+		
+			single_setAttributeProperties_CommentAuditEntry_name();
+		
+			single_setAttributeProperties_CommentAuditEntry_changeTimestamp();
 		
 				setDefaultProperties(
 					"ConcertType",
@@ -881,6 +967,72 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"BandComment", 
 								"comment",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CommentAuditEntry_commentbandcode() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CommentAuditEntry", 
+								"commentbandcode",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CommentAuditEntry_name() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CommentAuditEntry", 
+								"name",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CommentAuditEntry_changeTimestamp() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CommentAuditEntry", 
+								"changeTimestamp",
 								false, 
 								null,
 								null,

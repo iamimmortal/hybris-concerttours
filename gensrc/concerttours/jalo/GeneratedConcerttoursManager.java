@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 11, 2018 1:26:09 PM                     ---
+ * --- Generated at Jun 18, 2018 3:11:08 PM                     ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -9,6 +9,7 @@ package concerttours.jalo;
 import concerttours.constants.ConcerttoursConstants;
 import concerttours.jalo.Band;
 import concerttours.jalo.BandComment;
+import concerttours.jalo.CommentAuditEntry;
 import concerttours.jalo.Concert;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
@@ -273,6 +274,32 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	public BandComment createBandComment(final Map attributeValues)
 	{
 		return createBandComment( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CommentAuditEntry createCommentAuditEntry(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.COMMENTAUDITENTRY );
+			return (CommentAuditEntry)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CommentAuditEntry : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CommentAuditEntry createCommentAuditEntry(final Map attributeValues)
+	{
+		return createCommentAuditEntry( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public Concert createConcert(final SessionContext ctx, final Map attributeValues)

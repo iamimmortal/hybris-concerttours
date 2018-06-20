@@ -124,7 +124,7 @@ document.getElementById("myForm").reset();
     <div style="height:10px; width:10px;"><img src="http://bootdey.com/img/Content/user_1.jpg" style="height:75px;width:75px"></div>
     <p style="margin-right:100px; color:black;"><b> ${comm.date}</b></p>
     <p style="margin-right:100px; color:green;"><b>${comm.name} says:</b> ${comm.comment}</p>
-    <p style="float:right; color:grey;"><b>Band: ${comm.id}</b></p>
+    <p style="float:right; color:grey;"><b>Band: ${band.name}</b></p>
     
     </div>
      </c:forEach>

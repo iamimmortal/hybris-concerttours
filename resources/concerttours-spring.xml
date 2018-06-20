@@ -85,4 +85,22 @@
     <property name = "productService" ref = "productService" />
 </bean>
 	
+	<!-- Registering bean for interceptor -->
+	<bean id="validateCommentInterceptor" class="interceptors.CommentEntryValidation"
+      autowire="byName"/>
+      
+    <!-- mapping interceptor bean -->
+    <bean id="MyValidateInterceptorMapping" 
+      class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="validateCommentInterceptor"/>
+    <property name="typeCode" value="BandComment"/>
+ 
+    <!-- The order property is only effective with 4.1.1 and later -->
+    <property name="order" value="5000"/>
+</bean>
+
+<!-- Registering bean for event -->
+<bean id="commentEventListener"
+	  class="concerttours.events.CustomEventListener" parent="abstractEventListener">
+</bean>
 </beans>
