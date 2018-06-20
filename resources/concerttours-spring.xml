@@ -103,4 +103,12 @@
 <bean id="commentEventListener"
 	  class="concerttours.events.CustomEventListener" parent="abstractEventListener">
 </bean>
+
+<!-- bean for registering cronjob model -->
+<bean id="fetchCatagoriesJob" class="concerttours.cronjobs.FetchCatagoriesJob"
+	  parent="abstractJobPerformable" >
+
+	<!-- Inject other beans here if it's needed -->
+
+</bean>
 </beans>

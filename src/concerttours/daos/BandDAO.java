@@ -30,6 +30,10 @@ public interface BandDAO
 	 *
 	 * @return all the bands in the system
 	 */
+
+	List<BandModel> findBands();
+
+
 	List<BandModel> findBands(String country);
 
 	/**

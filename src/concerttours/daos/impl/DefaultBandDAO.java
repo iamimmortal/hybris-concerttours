@@ -140,4 +140,22 @@ public class DefaultBandDAO implements BandDAO
 		query.addQueryParameter("code", code);
 		return flexibleSearchService.<BandCommentModel> search(query).getResult();
 	}
-}
+
+	@Override
+	public List<BandModel> findBands()
+	{
+			// Build a query for the flexible search.
+			final String queryString = //
+			"SELECT {p:" + BandModel.PK + "} "//
+					+ "FROM {" + BandModel._TYPECODE + " AS p} ";
+			final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+			// Note that we could specify paginating logic by providing a start and count variable (commented out below)
+			// This can provide a safeguard against returning very large amounts of data, or hogging the database when there are
+			// for example millions of items being returned.
+			// As we know that there are only a few persisted bands in this use case we do not need to provide this.
+			//query.setStart(start);
+			//query.setCount(count);
+			// Return the list of BandModels.
+			return flexibleSearchService.<BandModel> search(query).getResult();
+		}
+	}
