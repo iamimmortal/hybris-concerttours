@@ -1,4 +1,4 @@
- <style class="cp-pen-styles">@-webkit-keyframes rotating {
+  <style class="cp-pen-styles">@-webkit-keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);
   }
@@ -187,10 +187,10 @@ a:hover {
     }
     
     #title {
-    background-color: #333; /* Black background color */
-    position: fixed; /* Make it stick/fixed */
-    margin-top: 50px; /* Hide the navbar 50 px outside of the top view */
-    width: 50%; /* Full width */
-    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    background-color: #333; Black background color
+    position: fixed; Make it stick/fixed
+    margin-top: 50px; Hide the navbar 50 px outside of the top view
+    width: 50%; Full width
+    transition: top 0.3s; Transition effect when sliding down (and up)
 }
 </style>

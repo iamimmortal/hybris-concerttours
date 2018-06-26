@@ -168,7 +168,15 @@
                 </attributes>
             </itemtype>
     <!-- Hybris123SnippetEnd -->
-   
+
+
+		<itemtype generate="true"
+		   code="FetchCatagoriesJob"
+		   jaloclass="concerttours.jalo.FetchCatagoriesJob"
+		   extends="CronJob"
+		   autocreate="true">	    
+		</itemtype>
+
   </itemtypes>
 
 </items>

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 18, 2018 3:11:08 PM                     ---
+ * --- Generated at Jun 21, 2018 4:52:20 PM                     ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -11,6 +11,7 @@ import concerttours.jalo.Band;
 import concerttours.jalo.BandComment;
 import concerttours.jalo.CommentAuditEntry;
 import concerttours.jalo.Concert;
+import concerttours.jalo.FetchCatagoriesJob;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
@@ -326,6 +327,32 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	public Concert createConcert(final Map attributeValues)
 	{
 		return createConcert( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public FetchCatagoriesJob createFetchCatagoriesJob(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.FETCHCATAGORIESJOB );
+			return (FetchCatagoriesJob)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating FetchCatagoriesJob : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public FetchCatagoriesJob createFetchCatagoriesJob(final Map attributeValues)
+	{
+		return createFetchCatagoriesJob( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

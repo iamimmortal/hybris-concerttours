@@ -13,27 +13,31 @@ package concerttours.cronjobs;
 
 import de.hybris.platform.cronjob.enums.CronJobResult;
 import de.hybris.platform.cronjob.enums.CronJobStatus;
-import de.hybris.platform.cronjob.model.CronJobModel;
 import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
 import de.hybris.platform.servicelayer.cronjob.PerformResult;
 
+import org.apache.log4j.Logger;
+
+import concerttours.model.FetchCatagoriesJobModel;
 import concerttours.out.CreateExcelFile;
 
 
 /**
  *
  */
-public class FetchCatagoriesJob extends AbstractJobPerformable
+public class FetchCatagoriesJob extends AbstractJobPerformable<FetchCatagoriesJobModel>
 {
+	final Logger LOG = Logger.getLogger(FetchCatagoriesJob.class.getName());
 
 	@Override
-	public PerformResult perform(final CronJobModel cronJobModel)
+	public PerformResult perform(final FetchCatagoriesJobModel fetchCatagoriesJobModel)
 	{
 		try {
 
 			//generate excel
 			final CreateExcelFile createExcelFile = new CreateExcelFile();
 			createExcelFile.generateFile();
+			LOG.info("Hi, this is my cronjob.");
          // In case of success return result: SUCCESS and status: FINISHED
          return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
 

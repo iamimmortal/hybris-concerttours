@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 18, 2018 3:11:08 PM                     ---
+ * --- Generated at Jun 21, 2018 4:52:20 PM                     ---
  * ----------------------------------------------------------------
  */
 package concerttours.constants;
@@ -21,6 +21,7 @@ public class GeneratedConcerttoursConstants
 		public static final String COMMENTAUDITENTRY = "CommentAuditEntry".intern();
 		public static final String CONCERT = "Concert".intern();
 		public static final String CONCERTTYPE = "ConcertType".intern();
+		public static final String FETCHCATAGORIESJOB = "FetchCatagoriesJob".intern();
 		public static final String MUSICTYPE = "MusicType".intern();
 	}
 	public static class Attributes

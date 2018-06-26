@@ -86,6 +86,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"FetchCatagoriesJob",
+			"CronJob",
+			concerttours.jalo.FetchCatagoriesJob.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
 		createRelationType(
 			"Product2RockBand",
 			null,
@@ -675,6 +685,19 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		
 			single_setAttributeProperties_CommentAuditEntry_changeTimestamp();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"FetchCatagoriesJob",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
 				setDefaultProperties(
 					"ConcertType",
 					true,

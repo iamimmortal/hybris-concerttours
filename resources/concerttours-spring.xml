@@ -106,7 +106,7 @@
 
 <!-- bean for registering cronjob model -->
 <bean id="fetchCatagoriesJob" class="concerttours.cronjobs.FetchCatagoriesJob"
-	  parent="abstractJobPerformable" >
+	  parent="abstractJobPerformable">
 
 	<!-- Inject other beans here if it's needed -->
 
